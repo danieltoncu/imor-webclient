@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let tag of tags">
+      <a routerLink="/tag/{{tag.uri}}">
+        {{ tag.label }}
+      </a>
+  </li>
+</ul>

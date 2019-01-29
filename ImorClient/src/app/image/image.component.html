@@ -1,0 +1,17 @@
+<div *ngIf="image">
+  <ul>
+    <li>
+        Description: {{image.description}}
+    </li>
+    <li>
+        <img src="{{image.content}}" width="300" height="300" alt="Smiley face">
+    </li>
+    <li>
+        <ul>
+            <li *ngFor="let tag of image.tags">
+              <span> {{tag.label}}</span>
+            </li>
+          </ul>
+    </li>
+  </ul>     
+</div>

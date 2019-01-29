@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="column"*ngFor="let image of images">
+    {{image.description}} <br>
+    <img src="{{image.content}}" width="300" height="300" alt="Smiley face" style="width:100%">   
+    <ul>
+        <li *ngFor="let tag of image.tags">
+          <span> {{tag.label}}</span>
+        </li>
+    </ul>
+  </div>
+</div>
