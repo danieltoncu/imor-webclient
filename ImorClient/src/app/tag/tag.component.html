@@ -1,7 +1,10 @@
 <div class="row">
   <div class="column"*ngFor="let image of images">
     {{image.description}} <br>
-    <img src="{{image.content}}" width="300" height="300" alt="Smiley face" style="width:100%">   
+    <a routerLink="/image/{{image.uri}}">     
+      <img src="{{image.content}}" width="300" height="300" alt="Smiley face" style="width:100%">   
+    </a>
+ 
     <ul>
         <li *ngFor="let tag of image.tags">
           <span> {{tag.label}}</span>
