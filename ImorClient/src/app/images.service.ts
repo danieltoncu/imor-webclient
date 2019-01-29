@@ -22,6 +22,12 @@ export class ImagesService {
     return this.http.get<Image[]>(path)
   }
 
+  getRecommendedPictures(uri: String): Observable<Image[]>{
+    const path = "http://imor-sparql-endpoint.westeurope.cloudapp.azure.com/api/images/similar?imageUri=" + uri;
+    
+    return this.http.get<Image[]>(path)
+  }
+
   getImageByUri(uri: string){
     const path = "http://imor-sparql-endpoint.westeurope.cloudapp.azure.com/api/images/byUri?imageUri=" + uri;
 

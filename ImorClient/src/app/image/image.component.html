@@ -1,17 +1,25 @@
 <div *ngIf="image">
-  <ul>
-    <li>
-        Description: {{image.description}}
-    </li>
-    <li>
-        <img src="{{image.content}}" width="300" height="300" alt="Smiley face">
-    </li>
-    <li>
-        <ul>
-            <li *ngFor="let tag of image.tags">
-              <span> {{tag.label}}</span>
-            </li>
-          </ul>
-    </li>
-  </ul>     
+  <div>
+      <p><b>Image uri</b>: {{image.uri}}</p>
+      <p><b>Image description</b>: {{image.description}}</p>
+      <img src="{{image.content}}" width="500" height="500" alt="Smiley face">
+      
+      <br><b>Tags</b><br>
+
+      <div *ngFor="let tag of image.tags">
+        <div class="tag"> {{tag.label}}</div>
+      </div>
+  </div>
+  
+  <br><br><br> <b>Similar images</b> <br><br><br>
+
+  <div *ngFor="let similarImage of similarImages" class="polaroid">
+      <a routerLink="/image/{{similarImage.uri}}">     
+        <img src="{{similarImage.content}}" width="300" height="300" style="width:100%" alt="Smiley face">
+      </a>
+      <div class="container">
+          <p> {{similarImage.description}} <br></p>
+      </div>
+  </div>    
 </div>
+

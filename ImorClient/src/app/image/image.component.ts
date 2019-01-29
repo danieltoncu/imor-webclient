@@ -13,11 +13,18 @@ import { Observable, of} from 'rxjs';
 export class ImageComponent implements OnInit {
 
   image: Image;
+  similarImages: Image[];
 
   constructor(private imageService: ImagesService, private route: ActivatedRoute,) {    
   }
 
   ngOnInit() {
-    this.imageService.getImageByUri(this.route.snapshot.paramMap.get('uri')).subscribe(image => this.image = image);
+    this.imageService.getImageByUri(this.route.snapshot.paramMap.get('uri')).subscribe(image => {
+      this.image = image
+      this.imageService.getRecommendedPictures(this.route.snapshot.paramMap.get('uri')).subscribe(images => {
+        images.forEach(image => image.uri = encodeURIComponent(image.uri))
+        this.similarImages = images
+      })
+    });
   }
 }

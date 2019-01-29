@@ -1,14 +1,13 @@
 <div class="row">
-  <div class="column"*ngFor="let image of images">
-    {{image.description}} <br>
+  <div class="polaroid"*ngFor="let image of images">
     <a routerLink="/image/{{image.uri}}">     
       <img src="{{image.content}}" width="300" height="300" alt="Smiley face" style="width:100%">   
     </a>
- 
-    <ul>
-        <li *ngFor="let tag of image.tags">
-          <span> {{tag.label}}</span>
-        </li>
-    </ul>
+    <div class="container">
+        <p> {{image.description}} <br></p>
+    </div>
+    <div *ngFor="let tag of image.tags">
+      <p> {{tag.label}}</p>
+    </div>
   </div>
 </div>
