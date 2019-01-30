@@ -3,8 +3,6 @@
     <div class="container">
         <p> {{image.description}} <br></p>
         <br><b> <b>Tags</b> </b><br>
-        <div *ngFor="let tag of image.tags">
-            <p> {{tag.label}}</p>
-        </div>
+        <a *ngFor="let tag of image.tags">{{tag.label}}</a>
     </div>
 </div>

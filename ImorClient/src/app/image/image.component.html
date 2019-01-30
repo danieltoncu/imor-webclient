@@ -6,10 +6,8 @@
       
       <br><b>Tags</b><br>
 
-      <div *ngFor="let tag of image.tags">
-          <a routerLink="/tag/{{tag.uri}}">
-            <div class="tag"> {{tag.label}}</div>
-          </a>
+      <div>
+          <a *ngFor="let tag of image.tags"routerLink="/tag/{{tag.uri}}">{{tag.label}}</a>
       </div>
   </div>
   

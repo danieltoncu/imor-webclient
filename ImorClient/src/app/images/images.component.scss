@@ -1,5 +1,5 @@
 div.polaroid {
-  width: 30%;
+  width: 40%;
   float: left;
   padding: 15px;
   background-color: white;
@@ -11,3 +11,11 @@ div.container {
   text-align: center;
   padding: 10px 20px;
 }   
+
+.left{display:inline-block}
+.right{display:inline-block; float:right}
+
+a{
+  display: inline-block;
+  padding: 5px;
+}
