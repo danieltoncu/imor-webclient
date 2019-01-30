@@ -7,7 +7,9 @@
         <p> {{image.description}} <br></p>
     </div>
     <div *ngFor="let tag of image.tags">
-      <p> {{tag.label}}</p>
+        <a routerLink="/tag/{{tag.uri}}" (click)="onClick()">
+            <p> {{tag.label}}</p>
+        </a>
     </div>
   </div>
 </div>

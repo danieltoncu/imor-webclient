@@ -7,14 +7,16 @@
       <br><b>Tags</b><br>
 
       <div *ngFor="let tag of image.tags">
-        <div class="tag"> {{tag.label}}</div>
+          <a routerLink="/tag/{{tag.uri}}">
+            <div class="tag"> {{tag.label}}</div>
+          </a>
       </div>
   </div>
   
   <br><br><br> <b>Similar images</b> <br><br><br>
 
   <div *ngFor="let similarImage of similarImages" class="polaroid">
-      <a routerLink="/image/{{similarImage.uri}}">     
+      <a routerLink="/image/{{similarImage.uri}}" (click)="onClick()">     
         <img src="{{similarImage.content}}" width="300" height="300" style="width:100%" alt="Smiley face">
       </a>
       <div class="container">

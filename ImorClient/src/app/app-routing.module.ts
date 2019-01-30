@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'author', component: AuthorComponent},
   { path: 'image/:uri', component: ImageComponent},
   { path: 'tag/:uri', component: TagComponent},
+  { path: '', redirectTo: '/images', pathMatch: 'full' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let tag of tags">
-      <a routerLink="/tag/{{tag.uri}}">
+      <a routerLink="/tag/{{tag.uri}}" (click)="onClick()">
         {{ tag.label }}
       </a>
   </li>

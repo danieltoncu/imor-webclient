@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Tag} from "../Tag";
 import { Observable, of} from 'rxjs';
 import { TagsService } from '../tags.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-tags',
@@ -12,7 +13,7 @@ export class TagsComponent implements OnInit {
 
   tags: Tag[];
 
-  constructor(private tagService: TagsService) {
+  constructor(private tagService: TagsService, private location: Location) {
     
     tagService.getTags().subscribe(tags =>
       {
@@ -27,5 +28,9 @@ export class TagsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+ 
+  onClick(){
+    location.reload();
   }
 }
