@@ -1,7 +1,7 @@
 <div class="row">
   <div class="polaroid"*ngFor="let image of images">
     <a routerLink="/image/{{image.uri}}">     
-      <img src="{{image.content}}" width="300" height="300" alt="Smiley face" style="width:100%">   
+      <img src="{{image.content}}" alt="Smiley face" style="width:100%">   
     </a>
     <div class="container">
         <p> {{image.description}} <br></p>
